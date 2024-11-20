@@ -1,5 +1,7 @@
-#Use a while loop to repeatedly ask for inputs per person.
-while True:
+#Use try and except to display an error message.
+try:
+    #Use a while loop to repeatedly ask for inputs per person.
+    while True:
 	  
      #Define variables that will store the data collected for each person.
      full_name = input("Please input your full name: ")
@@ -14,7 +16,7 @@ while True:
      mbti_result = input("Please input your MBTI result: ")
      birthday = input("Please input your date of birth: ")
      zodiac_sign = input("Please input your zodiac sign: ")
-     
+
      #Use read and write to put in all entries in a txt file.
      with open("./profile_list.txt", "a") as profile_list:
      	profile_list.write("\nProfile Information\n")
@@ -33,11 +35,13 @@ while True:
 
      #Ask the user if they want to continue.
      another_profile = input("Do you want to enter another profile? (yes/no): ")
-    
+
      #Use an if statement to continue or end the loop.
      if another_profile == "no":
      	break
-    
-   
+#Use an except command to display an error message.
+except ValueError:
+	print("Your input is invalid. Please try again.")
+         
 
 
